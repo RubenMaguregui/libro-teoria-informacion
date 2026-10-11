@@ -28,7 +28,7 @@ jobs:
       # The TikZ figures are committed already compiled, so CI only needs
       # the packages used by the PDF book itself.
       - name: Instalar fuentes New Computer Modern
-        run: "$HOME/.TinyTeX/bin/x86_64-linux/tlmgr" install newcomputermodern
+        run: $HOME/.TinyTeX/bin/x86_64-linux/tlmgr install newcomputermodern
 
       - name: Renderizar
         run: quarto render
