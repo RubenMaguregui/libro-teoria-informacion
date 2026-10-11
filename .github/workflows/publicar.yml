@@ -29,8 +29,9 @@ jobs:
       # the packages used by the PDF book itself.
       - name: Instalar fuentes New Computer Modern
         run: |
-          tlmgr update --self
-          tlmgr install newcomputermodern
+          tlmgr="$HOME/.TinyTeX/bin/x86_64-linux/tlmgr"
+          "$tlmgr" update --self
+          "$tlmgr" install newcomputermodern
 
       - name: Renderizar
         run: quarto render
