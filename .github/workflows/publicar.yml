@@ -18,7 +18,7 @@ jobs:
   construir:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
@@ -28,7 +28,9 @@ jobs:
       # The TikZ figures are committed already compiled, so CI only needs
       # the packages used by the PDF book itself.
       - name: Instalar fuentes New Computer Modern
-        run: $HOME/.TinyTeX/bin/x86_64-linux/tlmgr install newcomputermodern
+        run: |
+          tlmgr update --self
+          tlmgr install newcomputermodern
 
       - name: Renderizar
         run: quarto render
