@@ -1,0 +1,24 @@
+% Notation macros shared by the PDF book (include-in-header), the HTML book
+% (MathJax, injected by filtros/macros.lua) and the TikZ figures
+% (tikz-estilos.tex).
+%
+% MathJax compatibility: use only \newcommand / \renewcommand with plain
+% mandatory arguments, one definition per line. No \DeclareMathOperator,
+% \ensuremath, \xspace or other package-specific commands.
+
+% Information measures
+\newcommand{\Ent}[1]{H(#1)}
+\newcommand{\CondEnt}[2]{H(#1 \mid #2)}
+\newcommand{\JointEnt}[2]{H(#1, #2)}
+\newcommand{\MI}[2]{I(#1 ; #2)}
+\newcommand{\CondMI}[3]{I(#1 ; #2 \mid #3)}
+\newcommand{\KL}[2]{D(#1 \,\Vert\, #2)}
+
+% Probability
+\newcommand{\Prob}[1]{\Pr\left[#1\right]}
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+
+% Alphabets and sets
+\newcommand{\alf}[1]{\mathcal{#1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}

@@ -1,0 +1,19 @@
+\documentclass[tikz]{standalone}
+\input{tikz-estilos}
+
+\begin{document}
+\begin{tikzpicture}[node distance=12mm]
+  \node[bloque] (fuente) {Fuente};
+  \node[bloque, right=of fuente] (codificador) {Codificador};
+  \node[bloque, right=of codificador] (canal) {Canal\\ $p(y \mid x)$};
+  \node[bloque, right=of canal] (decodificador) {Decodificador};
+  \node[bloque, right=of decodificador] (destino) {Destino};
+
+  \draw[flecha] (fuente) -- node[above] {$W$} (codificador);
+  \draw[flecha] (codificador) -- node[above] {$X$} (canal);
+  \draw[flecha] (canal) -- node[above] {$Y$} (decodificador);
+  \draw[flecha] (decodificador) -- node[above] {$\hat{W}$} (destino);
+
+  \node[below=4mm of canal, font=\small] {$\MI{X}{Y}$};
+\end{tikzpicture}
+\end{document}

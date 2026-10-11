@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: _book
+
+lang: es
+
+book:
+  title: "Teoría de la información"
+  author: "Rubén Maguregui"
+  date: last-modified
+  date-format: long
+  license: "CC BY-SA"
+  downloads: [pdf]
+  search: true
+  chapters:
+    - index.qmd
+    - capitulos/01-entropia/index.qmd
+    - referencias.qmd
+
+bibliography: referencias.bib
+csl: iso690-numeric-es.csl
+
+filters:
+  - filtros/macros.lua
+
+format:
+  html:
+    theme:
+      light: [cosmo, estilos/custom.scss]
+      dark: [darkly, estilos/custom.scss]
+    html-math-method: mathjax
+    default-image-extension: svg
+    number-depth: 2
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    pdf-engine: lualatex
+    mainfont: NewComputerModern10
+    sansfont: NewComputerModernSans10
+    monofont: NewComputerModernMono10
+    mathfont: NewComputerModern Math
+    include-in-header:
+      - file: macros.tex
+    default-image-extension: pdf
+    number-depth: 2

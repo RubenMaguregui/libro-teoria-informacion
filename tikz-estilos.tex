@@ -1,0 +1,19 @@
+% Shared preamble and TikZ styles for every figure in capitulos/*/figuras/.
+% Each figure starts with:
+%   \documentclass[tikz]{standalone}
+%   \input{tikz-estilos}
+% scripts/figuras.sh puts the repository root on TEXINPUTS.
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{newcomputermodern}
+\input{macros}
+
+\usetikzlibrary{arrows.meta, positioning, calc, shapes.geometric}
+
+\tikzset{
+  >={Stealth[length=2.2mm]},
+  bloque/.style={draw, rectangle, rounded corners=2pt, minimum height=9mm,
+    minimum width=20mm, align=center},
+  flecha/.style={->, thick},
+}

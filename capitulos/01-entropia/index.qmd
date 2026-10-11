@@ -1,0 +1,45 @@
+# Entropía {#sec-entropia}
+
+Este capítulo de ejemplo comprueba que todas las piezas del libro funcionan: definiciones, teoremas, demostraciones, referencias cruzadas, citas, macros de notación y figuras TikZ.
+
+## El modelo de comunicación
+
+Shannon modeló la comunicación como una cadena de bloques que transforman un mensaje en símbolos que atraviesan un canal ruidoso [@shannon1948]. La @fig-canal muestra el esquema.
+
+![Esquema de un sistema de comunicación.](figuras/canal){#fig-canal}
+
+## Entropía de una variable aleatoria
+
+::: {#def-entropia}
+## Entropía
+
+Sea $X$ una variable aleatoria discreta con alfabeto $\alf{X}$ y función de probabilidad $p$. La *entropía* de $X$ es
+$$
+\Ent{X} = -\sum_{x \in \alf{X}} p(x) \log_2 p(x),
+$$ {#eq-entropia}
+con el convenio $0 \log 0 = 0$.
+:::
+
+La entropía mide, en bits, la incertidumbre media sobre el valor de $X$; en palabras de Cover y Thomas, es «la cantidad de información necesaria, en promedio, para describir la variable aleatoria» [@cover2006, cap. 2].
+
+::: {#thm-cota-entropia}
+## Cotas de la entropía
+
+Si $\alf{X}$ es finito, entonces $0 \le \Ent{X} \le \log_2 |\alf{X}|$, y la cota superior se alcanza si y solo si $X$ es uniforme.
+:::
+
+::: {.proof}
+La cota inferior se sigue de que cada sumando de la @eq-entropia es no negativo. Para la superior, sea $u$ la distribución uniforme sobre $\alf{X}$. Entonces
+$$
+0 \le \KL{p}{u} = \sum_{x} p(x) \log_2 \frac{p(x)}{1/|\alf{X}|} = \log_2 |\alf{X}| - \Ent{X},
+$$
+con igualdad si y solo si $p = u$.
+:::
+
+::: {#exm-binaria}
+## Entropía binaria
+
+Si $X \sim \operatorname{Bernoulli}(p)$, entonces $\Ent{X} = -p \log_2 p - (1-p) \log_2 (1-p)$, que alcanza su máximo, $1$ bit, en $p = 1/2$, de acuerdo con el @thm-cota-entropia.
+:::
+
+La información mutua $\MI{X}{Y} = \Ent{X} - \CondEnt{X}{Y}$ se estudiará en el próximo capítulo.
