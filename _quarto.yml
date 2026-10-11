@@ -35,11 +35,8 @@ format:
     documentclass: scrreprt
     papersize: a4
     pdf-engine: lualatex
-    mainfont: NewComputerModern10
-    sansfont: NewComputerModernSans10
-    monofont: NewComputerModernMono10
-    mathfont: NewComputerModern Math
     include-in-header:
+      - text: \usepackage{newcomputermodern}
       - file: macros.tex
     default-image-extension: pdf
     number-depth: 2

@@ -43,7 +43,7 @@ Libro «Teoría de la información» escrito en Quarto. La salida principal es H
 
 - Vista previa: `quarto preview` (o `npm run preview`).
 - Libro completo: `npm run render` (figuras + HTML + PDF en `_book/`).
-- El PDF se compila con LuaLaTeX y las fuentes New Computer Modern (`mainfont`/`mathfont` en `_quarto.yml`).
+- El PDF se compila con LuaLaTeX y las fuentes New Computer Modern, cargadas con el paquete `newcomputermodern` en `include-in-header` (no con `mainfont`/`mathfont`, que fallan en TinyTeX).
 - Cada push a `main` publica el libro en GitHub Pages (`.github/workflows/publicar.yml`), con enlace de descarga del PDF.
 
 ## Control de versiones
